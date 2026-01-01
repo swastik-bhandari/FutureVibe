@@ -15,6 +15,7 @@ export default function ErrorReporter({ error, reset }: ReporterProps) {
 
   useEffect(() => {
     const inIframe = window.parent !== window;
+    
     if (!inIframe) return;
 
     const send = (payload: unknown) => window.parent.postMessage(payload, "*");
